@@ -7,6 +7,7 @@ import styles from "@/styles/Home.module.css";
 
 import ParticlesComponent from "@/components/Particles";
 import TypingText from "@/utils/Typewriter";
+
 const geistSans = Geist({
     variable: "--font-geist-sans",
     subsets: ["latin"],
@@ -33,21 +34,21 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <div
-                className={`${styles.page} ${geistSans.variable} ${geistMono.variable}`}
+                className={`${styles.home} ${geistSans.variable} ${geistMono.variable}`}
             >
-                <main className={styles.main}>
-                    <div className={styles.particlesContainer}>
+                <main className={styles["home__main"]}>
+                    <div className={styles["home__particles-container"]}>
                         <ParticlesComponent />
-                        <div className={styles.bannerContent}>
+                        <div className={styles["home__banner"]}>
                             <Image
                                 src="/profile-pic.jpg"
                                 alt="adam white photo"
                                 title="adam white photo"
-                                className={styles.heroIcon}
+                                className={styles["home__hero-icon"]}
                                 width={150}
                                 height={150}
                             />
-                            <div className={styles.bannerContentText}>
+                            <div className={styles["home__banner-text"]}>
                                 <span>Hi, my name is</span>
                                 <h1>Adam.</h1>
                                 <TypingText
@@ -57,14 +58,13 @@ export default function Home() {
                                         "Computer Science MSc",
                                     ]}
                                 />
-
                                 <p>
                                     A passionate web app developer. I tend to
                                     make use of modern web technologies to build
                                     websites that look great, feel fantastic,
                                     and function correctly.
                                 </p>
-                                <div className={styles.socialMediaIcons}>
+                                <div className={styles["home__social-icons"]}>
                                     <a
                                         href="https://www.linkedin.com/in/adamfrankwhite/"
                                         target="_blank"
@@ -84,7 +84,7 @@ export default function Home() {
                         </div>
                     </div>
                 </main>
-                <footer className={styles.footer}>
+                <footer className={styles["home__footer"]}>
                     <a
                         href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
                         target="_blank"

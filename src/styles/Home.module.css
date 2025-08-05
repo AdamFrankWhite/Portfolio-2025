@@ -1,4 +1,4 @@
-.page {
+.home {
     --gray-rgb: 0, 0, 0;
     --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
     --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
@@ -7,17 +7,14 @@
     --button-secondary-hover: #f2f2f2;
 
     display: grid;
-    /* grid-template-rows: 20px 1fr 20px; */
     align-items: center;
     justify-items: center;
     min-height: 100svh;
-    /* padding: 80px; */
-    /* gap: 64px; */
     font-family: var(--font-geist-sans);
 }
 
 @media (prefers-color-scheme: dark) {
-    .page {
+    .home {
         --gray-rgb: 255, 255, 255;
         --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
         --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
@@ -27,20 +24,13 @@
     }
 }
 
-.main {
-    /* display: flex; */
+.home__main {
     width: 100%;
     min-height: 500px;
     color: var(--foreground);
-
-    /* flex-direction: column;
-    gap: 32px;
-    grid-row-start: 2; */
-    /* background: url("/code-background.gif");
-    background-size: cover; */
 }
 
-.main ol {
+.home__main ol {
     font-family: var(--font-geist-mono);
     padding-left: 0;
     margin: 0;
@@ -50,18 +40,19 @@
     list-style-position: inside;
 }
 
-.main li:not(:last-of-type) {
+.home__main li:not(:last-of-type) {
     margin-bottom: 8px;
 }
 
-.main code {
+.home__main code {
     font-family: inherit;
     background: var(--gray-alpha-100);
     padding: 2px 4px;
     border-radius: 4px;
     font-weight: 600;
 }
-.particlesContainer {
+
+.home__particles-container {
     width: 100%;
     height: 90vh;
     position: relative;
@@ -70,7 +61,8 @@
     justify-content: center;
     align-items: center;
 }
-.bannerContent {
+
+.home__banner {
     position: absolute;
     display: flex;
     top: 25%;
@@ -81,50 +73,44 @@
     z-index: 1;
     gap: 2rem;
     align-items: center;
-    span {
-        color: rgb(147 197 253);
-    }
-
-    .bannerContentText {
-        background: var(--background);
-        padding: 1rem;
-    }
-    /* .bannerContentText h1,
-    .bannerContentText h2,
-    .bannerContentText span,
-    .bannerContentText p {
-        background: var(--background);
-    } */
-    .bannerContentText h1 {
-        font-size: 3rem;
-    }
-    .socialMediaIcons {
-        display: flex;
-        justify-content: flex-end;
-        gap: 0.5rem;
-    }
 }
 
-.heroIcon {
+.home__banner span {
+    color: rgb(147 197 253);
+}
+
+.home__banner-text {
+    background: var(--background);
+    padding: 1rem;
+}
+
+.home__banner-text h1 {
+    font-size: 3rem;
+}
+
+.home__social-icons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}
+
+.home__hero-icon {
     width: 15vw;
     max-width: 250px;
     height: auto;
-
     margin: auto;
     background: white;
     border-radius: 50%;
-
-    height: auto;
     display: block;
     box-shadow: 0 0 0 10px rgba(234, 234, 234, 0.2);
 }
 
-.ctas {
+.home__ctas {
     display: flex;
     gap: 16px;
 }
 
-.ctas a {
+.home__ctas a {
     appearance: none;
     border-radius: 128px;
     height: 48px;
@@ -152,23 +138,23 @@ a.secondary {
     min-width: 158px;
 }
 
-.footer {
+.home__footer {
     grid-row-start: 3;
     display: flex;
     gap: 24px;
 }
 
-.footer a {
+.home__footer a {
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
-.footer img {
+.home__footer img {
     flex-shrink: 0;
 }
 
-/* Enable hover only on non-touch devices */
+/* Hover styles for non-touch devices */
 @media (hover: hover) and (pointer: fine) {
     a.primary:hover {
         background: var(--button-primary-hover);
@@ -180,31 +166,31 @@ a.secondary {
         border-color: transparent;
     }
 
-    .footer a:hover {
+    .home__footer a:hover {
         text-decoration: underline;
         text-underline-offset: 4px;
     }
 }
 
 @media (max-width: 600px) {
-    .page {
+    .home {
         padding: 32px;
         padding-bottom: 80px;
     }
 
-    .main {
+    .home__main {
         align-items: center;
     }
 
-    .main ol {
+    .home__main ol {
         text-align: center;
     }
 
-    .ctas {
+    .home__ctas {
         flex-direction: column;
     }
 
-    .ctas a {
+    .home__ctas a {
         font-size: 14px;
         height: 40px;
         padding: 0 16px;
@@ -214,7 +200,7 @@ a.secondary {
         min-width: auto;
     }
 
-    .footer {
+    .home__footer {
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;

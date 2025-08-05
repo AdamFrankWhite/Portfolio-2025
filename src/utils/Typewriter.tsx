@@ -32,7 +32,7 @@ const TypingText = ({ phrases }: TypingTextProps) => {
                 timeout = setTimeout(() => {
                     setText(currentPhrase.slice(0, charIndex - 1));
                     setCharIndex(charIndex - 1);
-                }, 75);
+                }, Math.floor(Math.random() * 76) + 75);
             } else {
                 // Done deleting, move to next word
                 setIsTyping(true);

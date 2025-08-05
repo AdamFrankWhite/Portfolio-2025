@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { Geist, Geist_Mono } from "next/font/google";
 import styles from "@/styles/Home.module.css";
+
 import ParticlesComponent from "@/components/Particles";
 const geistSans = Geist({
     variable: "--font-geist-sans",
@@ -14,7 +15,6 @@ const geistMono = Geist_Mono({
 });
 
 export default function Home() {
-    const darkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
     return (
         <>
             <Head>
@@ -32,7 +32,7 @@ export default function Home() {
             <div
                 className={`${styles.page} ${geistSans.variable} ${geistMono.variable}`}
             >
-                <div className={styles.main}>
+                <main className={styles.main}>
                     <div
                         style={{
                             width: "100%",
@@ -40,14 +40,13 @@ export default function Home() {
                             position: "relative",
                         }}
                     >
-                        <ParticlesComponent darkMode={darkMode} />
+                        <ParticlesComponent />
                         <div
                             style={{
                                 position: "absolute",
                                 top: 0,
                                 left: 0,
                                 zIndex: 1,
-                                color: "#fff",
                             }}
                         >
                             <span>Hi, my name is</span>
@@ -61,7 +60,7 @@ export default function Home() {
                             </p>
                         </div>
                     </div>
-                </div>
+                </main>
                 <footer className={styles.footer}>
                     <a
                         href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"

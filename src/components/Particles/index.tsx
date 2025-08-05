@@ -10,12 +10,25 @@ import {
 // import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
 import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
 // import { loadBasic } from "@tsparticles/basic"; // if you are going to use `loadBasic`, install the "@tsparticles/basic" package too.
-type ParticlesComponentProps = {
-    darkMode: boolean;
-};
-const ParticlesComponent = ({ darkMode }: ParticlesComponentProps) => {
-    const [init, setInit] = useState(false);
 
+const ParticlesComponent = () => {
+    const [init, setInit] = useState(false);
+    const [darkMode, setDarkMode] = useState(false);
+    const [mounted, setMounted] = useState(false);
+    // Detect dark mode client-side
+    useEffect(() => {
+        setMounted(true);
+
+        const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+        setDarkMode(mediaQuery.matches);
+
+        const handler = (e: MediaQueryListEvent) => {
+            setDarkMode(e.matches);
+        };
+
+        mediaQuery.addEventListener("change", handler);
+        return () => mediaQuery.removeEventListener("change", handler);
+    }, []);
     // this should be run only once per application lifetime
     useEffect(() => {
         initParticlesEngine(async (engine) => {

@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Menu, Moon, Sun, X } from "lucide-react";
+import { LuSun } from "react-icons/lu";
+import { CgMenu } from "react-icons/cg";
+import { IoCloseSharp } from "react-icons/io5";
+import { FaRegMoon } from "react-icons/fa";
 import styles from "./Navbar.module.scss";
 
 export default function Navbar() {
@@ -43,9 +46,12 @@ export default function Navbar() {
                     aria-label="Toggle menu"
                 >
                     {isOpen ? (
-                        <X size={24} color="var(--foreground)" />
+                        <IoCloseSharp
+                            size={"1.5rem"}
+                            color="var(--foreground)"
+                        />
                     ) : (
-                        <Menu size={24} color="var(--foreground)" />
+                        <CgMenu size={"1.5rem"} color="var(--foreground)" />
                     )}
                 </button>
 
@@ -60,10 +66,14 @@ export default function Navbar() {
                         position: "fixed",
                         bottom: 20,
                         right: 20,
-                        zIndex: 1000,
+                        zIndex: 2,
                     }}
                 >
-                    {theme === "dark" ? <Sun /> : <Moon />}
+                    {theme === "dark" ? (
+                        <LuSun size={"2rem"} />
+                    ) : (
+                        <FaRegMoon size={"2rem"} />
+                    )}
                 </span>
             </nav>
             {isOpen && (

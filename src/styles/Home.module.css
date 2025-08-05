@@ -87,12 +87,21 @@
 
     .bannerContentText {
         background: var(--background);
+        padding: 1rem;
     }
-    .bannerContentText h1,
+    /* .bannerContentText h1,
     .bannerContentText h2,
     .bannerContentText span,
     .bannerContentText p {
         background: var(--background);
+    } */
+    .bannerContentText h1 {
+        font-size: 3rem;
+    }
+    .socialMediaIcons {
+        display: flex;
+        justify-content: flex-end;
+        gap: 0.5rem;
     }
 }
 

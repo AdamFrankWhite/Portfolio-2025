@@ -1,7 +1,8 @@
 import Head from "next/head";
 import Image from "next/image";
 import { Geist, Geist_Mono } from "next/font/google";
-
+import { BsLinkedin } from "react-icons/bs";
+import { FaGithub } from "react-icons/fa6";
 import styles from "@/styles/Home.module.css";
 
 import ParticlesComponent from "@/components/Particles";
@@ -63,6 +64,22 @@ export default function Home() {
                                     websites that look great, feel fantastic,
                                     and function correctly.
                                 </p>
+                                <div className={styles.socialMediaIcons}>
+                                    <a
+                                        href="https://www.linkedin.com/in/adamfrankwhite/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <BsLinkedin size={"1.75rem"} />
+                                    </a>
+                                    <a
+                                        href="https://github.com/AdamFrankWhite"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
+                                        <FaGithub size={"1.75rem"} />
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>

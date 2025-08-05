@@ -1,9 +1,11 @@
 import Head from "next/head";
 import Image from "next/image";
 import { Geist, Geist_Mono } from "next/font/google";
+
 import styles from "@/styles/Home.module.css";
 
 import ParticlesComponent from "@/components/Particles";
+import TypingText from "@/utils/Typewriter";
 const geistSans = Geist({
     variable: "--font-geist-sans",
     subsets: ["latin"],
@@ -33,31 +35,35 @@ export default function Home() {
                 className={`${styles.page} ${geistSans.variable} ${geistMono.variable}`}
             >
                 <main className={styles.main}>
-                    <div
-                        style={{
-                            width: "100%",
-                            height: "90vh",
-                            position: "relative",
-                        }}
-                    >
+                    <div className={styles.particlesContainer}>
                         <ParticlesComponent />
-                        <div
-                            style={{
-                                position: "absolute",
-                                top: 0,
-                                left: 0,
-                                zIndex: 1,
-                            }}
-                        >
-                            <span>Hi, my name is</span>
-                            <h1>Adam.</h1>
-                            <h2>I build things for the web</h2>
-                            <p className="hero-content">
-                                A passionate web app developer. I tend to make
-                                use of modern web technologies to build websites
-                                that look great, feel fantastic, and function
-                                correctly.
-                            </p>
+                        <div className={styles.bannerContent}>
+                            <Image
+                                src="/profile-pic.jpg"
+                                alt="adam white photo"
+                                title="adam white photo"
+                                className={styles.heroIcon}
+                                width={150}
+                                height={150}
+                            />
+                            <div className={styles.bannerContentText}>
+                                <span>Hi, my name is</span>
+                                <h1>Adam.</h1>
+                                <TypingText
+                                    phrases={[
+                                        "I build things for the web",
+                                        "Web developer. Problem solver.",
+                                        "Computer Science MSc",
+                                    ]}
+                                />
+
+                                <p>
+                                    A passionate web app developer. I tend to
+                                    make use of modern web technologies to build
+                                    websites that look great, feel fantastic,
+                                    and function correctly.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </main>

@@ -79,7 +79,7 @@ const ParticlesComponent = () => {
                     value: darkMode ? "#ffffff" : "#0d47a1",
                 },
                 links: {
-                    color: "#ffffff",
+                    color: darkMode ? "#ffffff" : "#0d47a1",
                     distance: 150,
                     enable: true,
                     opacity: 0.5,
@@ -99,7 +99,7 @@ const ParticlesComponent = () => {
                     density: {
                         enable: true,
                     },
-                    value: 80,
+                    value: 50,
                 },
                 opacity: {
                     value: 0.5,
